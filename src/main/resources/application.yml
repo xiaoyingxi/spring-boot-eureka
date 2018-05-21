@@ -1,0 +1,48 @@
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+spring:
+  application:
+    name: eureka
+  profiles:
+    active: dev
+server:
+  port: 8761
+
+management:
+  server:
+    port: 8762
+  endpoints:
+    web:
+      base-path: /manage
+      path-mapping.health: status
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+
+
+---
+spring:
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+---
+spring:
+  profiles: svt
+eureka:
+  client:
+    service-url:
+      defaultZone: http://yuuyoo-eureka:8761/eureka/
+
+---
+spring:
+  profiles: pro
+eureka:
+  client:
+    service-url:
+      defaultZone: http://yuuyoo-eureka:8761/eureka/
