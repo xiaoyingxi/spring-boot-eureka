@@ -1,4 +1,4 @@
-FROM registry.yuuyoo.com/yuuyoo/openjdk:1.8
+FROM registry-vpc.cn-beijing.aliyuncs.com/yuuyoo/openjdk:1.8
 MAINTAINER dave@yuuyoo.com
 
 COPY eureka-0.0.1-SNAPSHOT.jar /deployments/app.jar
